@@ -1,0 +1,39 @@
+На сайті https://www.demoblaze.com/ знайти:
+– xpath’и для роботи з логін формою
+//h5[@id='logInModalLabel'] 
+(//button[@class='close'])[2]
+//input[@id='loginusername']
+//input[@id='loginpassword'] aбо (//input[@type=‚password‘])[2]
+(//button[text()=‚Close'])[3]
+(//button[@class='btn btn-primary’])[3]
+– xpath’и для знаходження назв, цін та опису айтемів на Home сторінці
+//div[@id=‚tbodyid']//h4[@class='card-title']/a
+//div[@id=‚tbodyid‘]//h5 
+або 
+//div[@id='tbodyid']//h4[@class='card-title']/following-sibling::h5
+//div[@id=‚tbodyid']//p[@class='card-text']
+– xpath’и для перемикання Categories
+//div[@class=‚list-group']/a[position()>1]
+Або //div[@class=‚list-group']/a[text()='Phones']
+//div[@class=‚list-group']/a[text()='Laptops']
+//div[@class=‚list-group']/a[text()='Monitors']
+– xpath’и для навігаційного меню
+//div[@id=‚navbarExample']/descendant::li
+Або
+//div[@id='navbarExample']//li/a[text()='Home ‚]
+//div[@id=‚navbarExample']//li/a[text()='Contact']
+//div[@id='navbarExample']//li/a[text()='About us’]
+//div[@id=‚navbarExample']//li/a[text()='Cart']
+//div[@id='navbarExample']//li/a[text()='Log in’]
+//div[@id='navbarExample']//li/a[text()='Sign up']
+– xpath’и для інпутів у Contact us
+//input[@id=‚recipient-email']
+//input[@id=‚recipient-name']
+//div[@class=‚form-group']//textarea[@id='message-text']
+(//button[text()=‚Close‘])[1]
+//button[text()='Send message’]
+– xpath для додавання айтема у корзину
+//a[text()='Add to cart']
+– xpath для знаходження доданого айтема у корзині
+//tbody[@id='tbodyid']/tr[@class='success']/td[text()='Samsung galaxy s6']
+
