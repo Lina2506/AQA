@@ -9,20 +9,22 @@ public class BaseTests {
     public void config(){
         Configuration.browser = "chrome";
         Configuration.browserSize = "1024x768";
-        Configuration.headless = true;
+        Configuration.holdBrowserOpen = true;
+        Configuration.headless = false;
         Configuration.timeout = 10000;
         Configuration.savePageSource=false;
         Configuration.screenshots=true;
     }
     @BeforeMethod
     public void login(){
-        Selenide.open("https://www.google.com");
+//        Selenide.open("https://www.saucedemo.com");
+        Selenide.open("https://www.demoblaze.com/");
     }
     @AfterMethod
     public void cleanWebDriver(){
-        Selenide.clearBrowserCookies();
-        Selenide.refresh();
-        Selenide.open("about:blank");
+//        Selenide.clearBrowserCookies();
+//        Selenide.refresh();
+//        Selenide.open("about:blank");
     }
     @AfterTest
     public void tearDown(){
