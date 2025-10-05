@@ -21,6 +21,8 @@ $(byXpath("//a[@id='login2']")).click();
 
 $(byXpath("//input[@id='loginusername']")).append("test");
 $(byXpath("//input[@id='loginpassword']")).append("test");
+        Selenide.sleep(2000);
+
 $(byXpath("//div[@id='logInModal']//button[text()='Close']")).click();
 
 //– заповнити форму реєстрації
@@ -28,6 +30,8 @@ $(byXpath("//div[@id='logInModal']//button[text()='Close']")).click();
 
         $(byXpath("//input[@id='sign-username']")).append("test");
         $(byXpath("//input[@id='sign-password']")).append("test");
+
+        Selenide.sleep(2000);
 
         $(byXpath("//div[@id='signInModal']//button[text()='Close']")).click();
 //– проклікати весь список в меню Categories
@@ -40,8 +44,10 @@ $(byXpath("//div[@id='logInModal']//button[text()='Close']")).click();
 $(byXpath("//div[@id='navbarExample']//a[text()='Home ']")).click();
 
 $(byXpath("//div[@id='navbarExample']//a[text()='Contact']")).click();
+        Selenide.sleep(2000);
 $(byXpath("//div[@id='exampleModal']//button[text()='Close']")).click();
 $(byXpath("//div[@id='navbarExample']//a[text()='About us']")).click();
+        Selenide.sleep(2000);
         $(byXpath("//div[@id='videoModal']//button[text()='Close']")).click();
 $(byXpath("//div[@id='navbarExample']//a[text()='Cart']")).click();
 $(byXpath("//a[@id='nava']")).click();
@@ -58,8 +64,7 @@ $(byXpath("//a[@id='nava']")).click();
 $(byXpath("//a[text()='Add to cart']")).click();
 Selenide.sleep(2000);
 Selenide.actions().sendKeys(Keys.ENTER).perform();
-Selenide.actions().sendKeys(Keys.ENTER).perform();
-
+        Selenide.sleep(2000);
 //– повернути текстові значення айтемів на сторінці Home
         $(byXpath("//div[@id='navbarExample']//a[text()='Home ']")).click();
     }
