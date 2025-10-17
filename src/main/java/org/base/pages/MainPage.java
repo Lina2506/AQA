@@ -1,6 +1,7 @@
 package org.base.pages;
 
 import com.codeborne.selenide.*;
+import org.base.config.PageTools;
 
 
 import java.time.Duration;
@@ -9,7 +10,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class MainPage {
+public class MainPage extends PageTools {
     private final String logo="//div[@class='app_logo']";
     private final String headers ="//div[@class='inventory_item_name ']";
     private final String buttons="//button[text()='Add to cart']";
@@ -19,12 +20,15 @@ public class MainPage {
         $(byXpath(logo)).shouldBe(visible, Duration.ofSeconds(30));
     }
     public ElementsCollection getItems(){
-        return $$(byXpath(headers)).shouldBe(CollectionCondition.size(6));
+        shouldCollection("xpath", CollectionCondition.size(6), headers);
+        return getElements("xpath", headers);
     }
     public void clickAddToCartButton(){
-        $(byXpath(buttons)).shouldBe(clickable).click();
+        should("xpath", clickable, buttons);
+        click("xpath", buttons);
     }
     public void clickShoppingCardButton(){
-        $(byXpath(shoppingCardButton)).shouldBe(clickable).click();
+        should("xpath", clickable, shoppingCardButton);
+        click("xpath", shoppingCardButton);
     }
 }
