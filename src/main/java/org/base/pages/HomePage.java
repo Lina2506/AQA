@@ -1,13 +1,15 @@
 package org.base.pages;
 
 
+import org.base.config.PageTools;
+
 import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class HomePage {
+public class HomePage extends PageTools {
     private String name="//h4[@class='card-title']/a";
     private String price="//h4[@class='card-title']/following-sibling::h5";
 
@@ -20,6 +22,7 @@ public class HomePage {
         return product;
     }
     public void clickProduct(){
-        $(byXpath(name)).shouldBe(clickable).click();
+        should("xpath", clickable, name);
+        click("xpath", name);
     }
 }

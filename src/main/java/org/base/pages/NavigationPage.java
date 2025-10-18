@@ -1,13 +1,16 @@
 package org.base.pages;
 
+import org.base.config.PageTools;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
-public class NavigationPage {
+public class NavigationPage extends PageTools {
     private String cartButton="//a[text()='Cart']";
 
     public void clickCartButton(){
-        $(byXpath(cartButton)).shouldBe(clickable).click();
+        should("xpath",clickable,cartButton);
+        click("xpath",cartButton);
     }
 }

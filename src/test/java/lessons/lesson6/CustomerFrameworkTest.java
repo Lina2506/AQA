@@ -1,5 +1,6 @@
 package lessons.lesson6;
 
+import com.codeborne.selenide.ElementsCollection;
 import org.base.config.BaseTests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,14 +15,14 @@ public class CustomerFrameworkTest extends BaseTests {
         loginPage().typePassword(LOGIN_PASSWORD);
         loginPage().clickLoginButton();
 
-        String headerTextFromMainPage=mainPage().getItems().get(0).text();
+        ElementsCollection items = mainPage().getItems();
+        for (int i = 1; i <= items.size(); i++) {
+             mainPage().clickItemHeaderById(i);
+             mainPage().clickBackToProductsButton();
+        }
+        //проклікали кожен айтем і повернулись на mainPage
 
-        mainPage().clickAddToCartButton();
-        mainPage().clickShoppingCardButton();
 
-        String headerTextFromYourCartPage=yourCartPage().getItems().get(0).text();
-        Assert.assertEquals(headerTextFromMainPage, headerTextFromYourCartPage);
-        yourCartPage().clickCheckoutButton();
-
+//        mainPage().clickItemHeaderByName("Sauce Labs Fleece Jacket");
     }
 }

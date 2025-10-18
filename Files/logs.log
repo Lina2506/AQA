@@ -1,0 +1,53 @@
+15:05:40 | WARN | SelenideLogger:168                       | No listeners found for thread '1'
+15:05:40 | INFO | SimpleReport:49                          | Report for config
++----------------------+---------+------------+------------+
+| Element              | Subject | Status     | ms.        |
++----------------------+---------+------------+------------+
++----------------------+---------+------------+------------+
+
+15:05:40 | WARN | SelenideLogger:173                       | No listener 'simpleReport' found for thread '1' (it has 1 listeners)
+15:05:40 | INFO | WebDriverThreadLocalContainer:129        | No webdriver is bound to current thread: 1 - let's create a new webdriver
+15:05:43 | INFO | WebDriverFactory:122                     | Selenide 7.7.3 / Selenium 4.29.0 / chrome 141.0.7390.108 mac
+15:05:43 | INFO | WebDriverThreadLocalContainer:168        | Browser will stay open due to holdBrowserOpen=true: 1 -> ChromeDriver: chrome on mac (de85cfd57c467ea88daecbbef4a5cc3b)
+15:05:43 | INFO | SimpleReport:49                          | Report for login
++----------------------+---------------------------+------------+------------+
+| Element              | Subject                   | Status     | ms.        |
++----------------------+---------------------------+------------+------------+
+| open                 | https://www.saucedemo.com | PASS       | 3405       |
+|   webdriver          | create()                  | PASS       | 2877       |
++----------------------+---------------------------+------------+------------+
+
+15:05:43 | WARN | SelenideLogger:173                       | No listener 'simpleReport' found for thread '1' (it has 1 listeners)
+15:05:44 | INFO | SimpleReport:49                          | Report for detailItem
++----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+------------+------------+
+| Element                                                                                            | Subject                                                                | Status     | ms.        |
++----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+------------+------------+
+| By.xpath: //input[@id='user-name']                                                                 | should be(input condition: empty: attribute value="" and exact text "" and visible) | PASS       | 52         |
+| By.xpath: //input[@id='user-name']                                                                 | append(standard_user)                                                  | PASS       | 161        |
+| .form_input[id=password]                                                                           | should be(input condition: empty: attribute value="" and exact text "" and visible) | PASS       | 18         |
+| .form_input[id=password]                                                                           | append(secret_sauce)                                                   | PASS       | 39         |
+| By.xpath: //input[@id='login-button']                                                              | should be(clickable: interactable and enabled)                         | PASS       | 20         |
+| By.xpath: //input[@id='login-button']                                                              | click()                                                                | PASS       | 83         |
+| By.xpath: //div[@class='inventory_item_name ' and text()='Sauce Labs Fleece Jacket']               | should be(clickable: interactable and enabled)                         | PASS       | 15         |
+| By.xpath: //div[@class='inventory_item_name ' and text()='Sauce Labs Fleece Jacket']               | click()                                                                | PASS       | 46         |
+| By.xpath: //div[contains(@class, 'inventory_details_name')]                                        | get text()                                                             | PASS       | 69         |
+| By.xpath: //div[contains(@class, 'inventory_details_desc') and @data-test='inventory-item-desc']   | get text()                                                             | PASS       | 15         |
+| By.xpath: //div[contains(@class, 'inventory_details_price') and @data-test='inventory-item-price'] | get text()                                                             | PASS       | 13         |
++----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+------------+------------+
+
+15:05:44 | WARN | SelenideLogger:173                       | No listener 'simpleReport' found for thread '1' (it has 1 listeners)
+15:05:44 | INFO | SimpleReport:49                          | Report for cleanWebDriver
++----------------------+---------+------------+------------+
+| Element              | Subject | Status     | ms.        |
++----------------------+---------+------------+------------+
++----------------------+---------+------------+------------+
+
+15:05:44 | WARN | SelenideLogger:173                       | No listener 'simpleReport' found for thread '1' (it has 1 listeners)
+15:05:44 | INFO | CloseDriverCommand:24                    | Hold browser open: 1 -> ChromeDriver: chrome on mac (de85cfd57c467ea88daecbbef4a5cc3b)
+15:05:44 | INFO | SimpleReport:49                          | Report for tearDown
++----------------------+---------+------------+------------+
+| Element              | Subject | Status     | ms.        |
++----------------------+---------+------------+------------+
+| webdriver            | close() | PASS       | 2          |
++----------------------+---------+------------+------------+
+

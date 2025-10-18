@@ -1,6 +1,7 @@
 package org.base.pages;
 
 import com.codeborne.selenide.Selenide;
+import org.base.config.PageTools;
 
 import java.time.Duration;
 
@@ -8,7 +9,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
-public class CartPage {
+public class CartPage extends PageTools {
     private String title="//tr[@class='success']/td[text()='Samsung galaxy s6']";
     private String price="//tr[@class='success']/td[text()='360']";
     private String buttonPlaceOrder="//button[text()='Place Order']";

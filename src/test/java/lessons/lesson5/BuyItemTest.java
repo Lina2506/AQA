@@ -13,7 +13,6 @@ public class BuyItemTest extends BaseTests {
         Product itemFromHomePage = homePage().getItemFromHomePage();
 
         homePage().clickProduct();
-        detailItemPage().clickAddToCartButton();
         navigationPage().clickCartButton();
 
         Product itemFromCartPage = cartPage().getItemFromCartPage();
